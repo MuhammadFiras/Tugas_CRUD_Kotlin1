@@ -18,15 +18,15 @@ fun addItem() {
     val quantity = scanner.nextLine().toIntOrNull() ?: return println("Jumlah harus angka!")
 
     inventory.add(Item(name, quantity)) // Menambahkan ke list
-    println("✅ Item berhasil ditambahkan!")
+    println("Item berhasil ditambahkan!")
 }
 
 // Fungsi Menampilkan Inventory
 fun showInventory() {
     if (inventory.isEmpty()) {
-        println("📭 Inventory kosong.")
+        println("Inventory kosong.")
     } else {
-        println("\n📦 Daftar Inventory:")
+        println("\nDaftar Inventory:")
         inventory.forEachIndexed { index, item ->
             println("${index + 1}. ${item.name} - ${item.quantity} pcs")
         }
@@ -51,10 +51,10 @@ fun editItem() {
             val newQuantity = scanner.nextLine().toIntOrNull()
             newQuantity?.let { this.quantity = it }
 
-            println("✏️ Item berhasil diedit!")
+            println("Item berhasil diedit!")
         }
     } else {
-        println("❌ Nomor item tidak ditemukan!")
+        println("Nomor item tidak ditemukan!")
     }
 }
 
@@ -68,16 +68,16 @@ fun deleteItem() {
 
     if (index in inventory.indices) {
         inventory.removeAt(index)
-        println("🗑️ Item berhasil dihapus!")
+        println("Item berhasil dihapus!")
     } else {
-        println("❌ Nomor item tidak ditemukan!")
+        println("Nomor item tidak ditemukan!")
     }
 }
 
 // Fungsi utama (main)
 fun main() {
     while (true) {
-        println("\n=== APLIKASI INVENTORY ===")
+        println("\n=== SISTEM INVENTORY ===")
         println("1. Tambah Item")
         println("2. Lihat Inventory")
         println("3. Edit Item")
@@ -91,7 +91,7 @@ fun main() {
             "3" -> editItem()
             "4" -> deleteItem()
             "5" -> {
-                println("🚪 Program keluar...")
+                println("Program keluar...")
                 break
             }
             else -> println("Pilihan tidak valid!")
