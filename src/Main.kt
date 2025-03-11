@@ -1,15 +1,16 @@
 import java.util.Scanner
 
-// Data class untuk item dalam inventory
+// Data class untuk item dalam inventorynya
 data class Item(
     var name: String,
     var quantity: Int
 )
 
 val inventory = mutableListOf<Item>() // Mutable list untuk menyimpan data
-val scanner = Scanner(System.`in`) // Scanner untuk input user
+val scanner = Scanner(System.`in`) // Scanner untuk input nanti
 //test
-// Fungsi Tambah Item
+
+// Function Tambah Item
 fun addItem() {
     print("Masukkan nama item: ")
     val name = scanner.nextLine().trim()
@@ -21,7 +22,7 @@ fun addItem() {
     println("Item berhasil ditambahkan!")
 }
 
-// Fungsi Menampilkan Inventory
+// Function Menampilkan Item
 fun showInventory() {
     if (inventory.isEmpty()) {
         println("Inventory kosong.")
@@ -33,7 +34,7 @@ fun showInventory() {
     }
 }
 
-// Fungsi Edit Item
+// Function Edit Item
 fun editItem() {
     showInventory()
     if (inventory.isEmpty()) return
@@ -91,7 +92,7 @@ fun main() {
             "3" -> editItem()
             "4" -> deleteItem()
             "5" -> {
-                println("Program keluar...")
+                println("Program keluar, Terima Kasih Sudah Mencoba :)")
                 break
             }
             else -> println("Pilihan tidak valid!")
